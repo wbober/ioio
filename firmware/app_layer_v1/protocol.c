@@ -79,7 +79,8 @@ const BYTE incoming_arg_size[MESSAGE_TYPE_LIMIT] = {
   sizeof(ICSP_CONFIG_ARGS),
   sizeof(INCAP_CONFIG_ARGS),
   sizeof(SET_PIN_INCAP_ARGS),
-  sizeof(SOFT_CLOSE_ARGS)
+  sizeof(SOFT_CLOSE_ARGS),
+  sizeof(SET_PWM_RUNNING_PERIOD_ARGS)
   // BOOKMARK(add_feature): Add sizeof (argument for incoming message).
   // Array is indexed by message type enum.
 };
@@ -114,7 +115,8 @@ const BYTE outgoing_arg_size[MESSAGE_TYPE_LIMIT] = {
   sizeof(ICSP_CONFIG_ARGS),
   sizeof(INCAP_STATUS_ARGS),
   sizeof(INCAP_REPORT_ARGS),
-  sizeof(SOFT_CLOSE_ARGS)
+  sizeof(SOFT_CLOSE_ARGS),
+  sizeof(RESERVED_ARGS)
 
   // BOOKMARK(add_feature): Add sizeof (argument for outgoing message).
   // Array is indexed by message type enum.
@@ -314,6 +316,12 @@ static BOOL MessageDone() {
                    rx_msg.args.set_pwm_period.period,
                    rx_msg.args.set_pwm_period.scale_l
                    | (rx_msg.args.set_pwm_period.scale_h) << 1);
+      break;
+
+    case SET_PWM_RUNNING_PERIOD:
+      CHECK(rx_msg.args.set_pwm_running_period.pwm_num < NUM_PWM_MODULES);
+      SetPwmRunningPeriod(rx_msg.args.set_pwm_running_period.pwm_num,
+                          rx_msg.args.set_pwm_running_period.period);
       break;
 
     case SET_PIN_ANALOG_IN:

@@ -123,4 +123,7 @@ public interface PwmOutput extends Closeable {
 	 */
 	public void setPulseWidth(float pulseWidthUs)
 			throws ConnectionLostException;
+
+	public void setPeriod(float periodUs) throws ConnectionLostException;
+	public void setFrequency(float freqHz) throws ConnectionLostException;
 }

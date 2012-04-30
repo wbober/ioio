@@ -78,3 +78,10 @@ void SetPwmPeriod(int pwm_num, int period, int scale) {
     regs->con1 = 0x0006 | CLK_SRC[scale];
   }
 }
+
+void SetPwmRunningPeriod(int pwm_num, int period) {
+  volatile OC_REGS* regs;
+  log_printf("SetPwmRunningPeriod(%d, %d)", pwm_num, period);
+  regs = OC_REG(pwm_num);
+  regs->rs = period;
+}

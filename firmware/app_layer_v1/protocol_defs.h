@@ -133,6 +133,13 @@ typedef struct PACKED {
   WORD period;
 } SET_PWM_PERIOD_ARGS;
 
+// set pwm running period
+typedef struct PACKED {
+  BYTE pwm_num : 4;
+  BYTE : 4;
+  WORD period;
+} SET_PWM_RUNNING_PERIOD_ARGS;
+
 // uart report tx status
 typedef struct PACKED {
   BYTE uart_num : 2;
@@ -408,6 +415,7 @@ typedef struct PACKED {
     INCAP_CONFIG_ARGS                        incap_config;
     SET_PIN_INCAP_ARGS                       set_pin_incap;
     SOFT_CLOSE_ARGS                          soft_close;
+    SET_PWM_RUNNING_PERIOD_ARGS              set_pwm_running_period;
     // BOOKMARK(add_feature): Add argument struct to the union.
   } args;
   BYTE __vabuf[64];  // buffer for var args. never access directly!
@@ -498,6 +506,8 @@ typedef enum {
   INCAP_REPORT                        = 0x1C,
 
   SOFT_CLOSE                          = 0x1D,
+
+  SET_PWM_RUNNING_PERIOD              = 0x1E,
 
   // BOOKMARK(add_feature): Add new message type to enum.
   MESSAGE_TYPE_LIMIT

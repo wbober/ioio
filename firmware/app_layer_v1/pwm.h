@@ -34,6 +34,7 @@
 void PWMInit();
 void SetPwmDutyCycle(int pwm_num, int dc, int fraction);
 void SetPwmPeriod(int pwm_num, int period, int scale);
+void SetPwmRunningPeriod(int pwm_num, int period);
 
 
 #endif  // __PWM_H__

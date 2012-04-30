@@ -98,4 +98,28 @@ class PwmImpl extends AbstractResource implements PwmOutput {
 			throw new ConnectionLostException(e);
 		}
 	}
+
+	@Override
+	synchronized public void setPeriod(float periodUs) throws ConnectionLostException {
+		checkState();
+		float cycles = periodUs / baseUs_;
+		if (cycles >= (1 << 16)) {
+			cycles = 0;
+		}
+		int isteps = Math.round(cycles);
+		try {
+			ioio_.protocol_.setPwmRunningPeriod(pwmNum_, isteps);
+		} catch (IOException e) {
+			throw new ConnectionLostException(e);
+		}
+	}
+
+	@Override
+	public void setFrequency(float freqHz) throws ConnectionLostException {
+		if (freqHz == 0) {
+			setPeriod(0);
+		} else {
+			setPeriod(1000000.f / freqHz);
+		}
+	}
 }

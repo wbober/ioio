@@ -91,6 +91,7 @@ class IOIOProtocol {
 	static final int SET_PIN_INCAP                       = 0x1C;
 	static final int INCAP_REPORT                        = 0x1C;
 	static final int SOFT_CLOSE                          = 0x1D;
+	static final int SET_PWM_RUNNING_PERIOD              = 0x1E;
 
 	static final int[] SCALE_DIV = new int[] {
 		0x1F,  // 31.25
@@ -236,6 +237,15 @@ class IOIOProtocol {
 		writeByte(SET_PWM_DUTY_CYCLE);
 		writeByte(pwmNum << 2 | fraction);
 		writeTwoBytes(dutyCycle);
+		endBatch();
+	}
+
+	synchronized public void setPwmRunningPeriod(int pwmNum, int period)
+			throws IOException {
+		beginBatch();
+		writeByte(SET_PWM_RUNNING_PERIOD);
+		writeByte(pwmNum);
+		writeTwoBytes(period);
 		endBatch();
 	}
 
