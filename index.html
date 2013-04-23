@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="IOIO : Software, firmware and hardware of the IOIO - I/O for Android" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>IOIO</title>
+  </head>
+
+  <body>
+
+   <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><img alt="IOIO Logo" src="https://lh6.googleusercontent.com/-NtccMO1M7f4/UDhhwrx26UI/AAAAAAAAjTI/xwTI4Fb8xVQ/s887/ioio-logo.png"></p>
+
+<h1>IOIO Documentation</h1>
+
+<p>Welcome!
+Here you'll find all the documentation needed for using IOIO (pronounced "yo-yo") as well as contributing to its development.
+If you find anything missing, you can help yourself and others by creating a ticket in the "Issues" menu above.</p>
+
+<p>The IOIO is a board that provides a host machine the capability of interfacing with external hardware over a variety of commonly used protocols.
+The original IOIO board has been specifically designed to work with Android devices. The newer IOIO-OTG ("on the go") boards work with both Android devices and PC's (details <a href="http://ytai-mer.blogspot.com/2012/05/second-generation-of-ioio-is-in-works.html">here</a>).
+The IOIO board can be connected to its host over USB or Bluetooth, and provides a high-level Java API on the host side for using its I/O functions as if they were an integral part of the client.</p>
+
+<p>You can purchase a IOIO-OTG board online from <a href="https://www.sparkfun.com/products/11343">Sparkfun Electronics</a>. Other versions can be purchased from <a href="http://www.jayconsystems.com/product_detail.php?prod_id=113">Jaycon Systems</a>, <a href="https://www.adafruit.com/products/885">IOIOMint version from Adafruit</a> or the <a href="http://droidalyzer.com/tech.html">Droidalyzer IOIO board</a> from <a href="http://www.seeedstudio.com/depot/droidalyzer-portable-android-development-kit-ioio-alcohol-detector-accessory-for-android-p-1221.html?cPath=138">SeeedStudio</a>. Droidalyzer IOIO and IOIOMint have some additional features such as onboard LiPO, header pins and laser cut mint tin case.</p>
+
+<p>You can get answers to questions and get news about IOIO on the <a href="https://groups.google.com/d/forum/ioio-users">ioio-users discussion group</a>.</p>
+
+<p>The <a href="http://pinterest.com/ytaibt/ioio/">IOIO Gallery</a> lists various IOIO projects to give you some ideas of what you can do with IOIO.</p>
+
+<p>And this is <a href="http://ytai-mer.blogspot.com">the blog of Ytai</a>, the inventor of IOIO, where new developments are normally announced. Specifically, <a href="http://ytai-mer.blogspot.com/2011/04/meet-ioio-io-for-android.html">this introductory post</a> provides a good overview of this technology.</p>
+
+<h2>User Documentation</h2>
+
+<h3>Starters</h3>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/Read-This-Before-Connecting">Read This Before Connecting</a> - a really short must-read for the impatient <strong>to avoid damaging the board</strong>.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Beginner's-Guide">IOIO Beginner's Guide</a> - a "getting started" step-by-step tutorial for building your first IOIO application.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Eclipse Troubleshooting">Eclipse Troubleshooting</a> - problems and solutions to common Eclipse-related problems.</li>
+</ul><h3>Hardware</h3>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/Getting-To-Know-The-IOIO-OTG-Board">Getting to Know the IOIO-OTG Board</a> - information about the IOIO-OTG board and the I/O pins.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Getting-To-Know-The Board">Getting To Know The IOIO V1 Board</a> - information about the IOIO board and the I/O pins.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Power-Supply-OTG">Power Supply (IOIO-OTG)</a> - how to power the IOIO-OTG board, power considerations.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Power-Supply">Power Supply (IOIO V1)</a> - how to power the IOIO V1 board, power considerations.</li>
+</ul><h3>Connectivity</h3>
+
+<p><strong>Android:</strong></p>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Over-ADB">IOIO Over ADB</a></li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Over-Bluetooth">IOIO Over Bluetooth for Android</a></li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Over-OpenAccessory">IOIO Over OpenAccessory</a></li>
+</ul><p><strong>PC:</strong></p>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/Using-IOIO-With-a-PC">Using IOIO With a PC</a></li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Over-Bluetooth-for-PC">IOIO Over Bluetooth for PC</a></li>
+</ul><h3>Software</h3>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIOLib-Basics">IOIOLib Basics</a> - overview of IOIOLib.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIOLib-Core-API">IOIOLib Core API</a> - introduction to the <code>IOIO</code> interface.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIOLib-Application-Framework">IOIOLib Application Framework</a> - an important set of utilities that simplify IOIO-based application authoring.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Digital-IO">Digital I/O</a> - get those 0's and 1's in and out.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Analog-Input">Analog Input</a> - measure voltage.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/PWM-Output">PWM Output</a> - generate pulse width modulation signals.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Pulse-Input">Pulse Input</a> - measure pulse width and frequency.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/UART">UART</a> - communicate with serial devices.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/SPI">SPI</a> - control SPI devices as a host.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/TWI">TWI</a> - control I²C and SMBus devices as a host.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Capacitive-Sensing">Capacitive Sensing</a> touch-sensing by measuring capacitance.</li>
+</ul><h3>Resources</h3>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/Downloads">Downloads</a> - this page has links to download all the software and firmware you'll need for development.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Release-Notes">Release Notes</a> - change log of the various versions of the software and firmware.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/Supported-Devices">Supported Devices</a> - a list of all tested devices. </li>
+<li><a href="https://github.com/ytai/ioio/wiki/Supported-Bluetooth-Dongles">Supported Bluetooth Dongles</a> - a list of all tested bluetooth dongles. </li>
+</ul><h3>Tools</h3>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-OTG-Bootloader-and-IOIODude">IOIO-OTG Bootloader and IOIODude</a> - a guide on using the IOIODude application that lets you upgrade the firmware on your IOIO-OTG board.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/The-IOIO-Manager-Application">The IOIO Manager Application</a> - a guide on using the Android application that lets you upgrade the firmware on your IOIO v1 board.</li>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Bridge">IOIO Bridge</a> - use IOIO with the Android emulator or with a target Android being debugged.</li>
+</ul><h2>Developer Documentation</h2>
+
+<p><em>Most users shouldn't care about this section. This is only relevant if you want to take part in developing IOIO or interested in hacking the underlying IOIO software.</em></p>
+
+<p>If you're interested in taking part in IOIO development, please apply for membership in the <a href="https://groups.google.com/forum/?pli=1#!forum/ioio-dev">ioio-dev discussion group</a>.</p>
+
+<ul>
+<li><a href="https://github.com/ytai/ioio/wiki/IOIO-Developer-Getting-Started-Guide">IOIO Developer Getting Started Guide</a></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">IOIO maintained by <a href="https://github.com/ytai">ytai</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+          <a id="forkme_banner" href="https://github.com/ytai/ioio">View on GitHub</a>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
