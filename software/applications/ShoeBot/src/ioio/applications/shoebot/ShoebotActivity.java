@@ -204,19 +204,21 @@ public class ShoebotActivity extends IOIOActivity implements
 				steppers_[0].setEnable(checked);
 				steppers_[1].setEnable(checked);
 
-				float speed = p_ * error_ + i_ * errorInt_ + d_ * errorDeriv_;
-				if (Math.abs(speed) > 0.5) {
-					speed = 0;
-					runOnUiThread(new Runnable() {
-						@Override
-						public void run() {
-							enableButton_.setChecked(false);
-						}
-					});
+				float speed = 0;
+				if (checked) {
+					speed = p_ * error_ + i_ * errorInt_ + d_ * errorDeriv_;
+					if (Math.abs(speed) > 0.5) {
+						// Emergency stop
+						speed = 0;
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								enableButton_.setChecked(false);
+							}
+						});
+					}
+					targetOrientation_-= speed * s_;
 				}
-				float conv = Math.abs(speed * s_);
-				targetOrientation_ = targetOrientation_ * (1 - conv)
-						+ orientation_ * conv;
 				steppers_[0].setSpeed(-speed + rotation_);
 				steppers_[1].setSpeed(speed + rotation_);
 				if (loopCount_++ == 50) {
@@ -338,7 +340,7 @@ public class ShoebotActivity extends IOIOActivity implements
 	private float p_ = 2.0F;
 	private float i_ = 40.0f;
 	private float d_ = 0.02f;
-	private float s_ = 0;
+	private float s_ = 0.001f;
 	private float rotation_ = 0;
 
 	@Override
