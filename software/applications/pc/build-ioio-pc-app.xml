@@ -10,7 +10,7 @@
     <path id="IOIOLibPC.classpath">
         <pathelement location="${IOIOLibPC.location}/bin"/>
         <pathelement location="${IOIOLibPC.location}/lib/jna-4.0.0.jar"/>
-        <pathelement location="${IOIOLibPC.location}/lib/purejavacomm-0.0.21.jar"/>
+        <pathelement location="${IOIOLibPC.location}/lib/purejavacomm-0.0.22.jar"/>
     </path>
     <path id="app.classpath">
         <pathelement location="bin"/>
